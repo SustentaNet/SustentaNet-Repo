@@ -188,4 +188,28 @@ public class Produto {
         return produto;
     }
 
+    public void deleteProdutoById(int id) {
+        try {
+            Connection conexao = mysql.getConnection();
+            String sql = "DELETE FROM produtos WHERE id = ?";
+            PreparedStatement statement = conexao.prepareStatement(sql);
+
+            statement.setInt(1, id);
+
+            int rowsDeleted = statement.executeUpdate();
+
+            if (rowsDeleted > 0) {
+                System.out.println("Produto excluído com sucesso!");
+            } else {
+                System.out.println("Nenhum produto encontrado com o ID fornecido.");
+            }
+
+            statement.close();
+            conexao.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
