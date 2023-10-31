@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import src.connection.mysql;
 
 public class Usuario {
@@ -222,9 +224,82 @@ public class Usuario {
             conexao.close();
         } catch (SQLException e) {
             // Aqui você pode tratar o erro de alguma maneira, por exemplo, logá-lo.
-            
+
         }
 
         return usuario; // Retorna o objeto Usuario ou null se não encontrado.
     }
+    
+        public static Usuario getUserByName(String name) {
+        Usuario usuario = null;
+        try {
+            Connection conexao = mysql.getConnection();
+            String sql = "SELECT * FROM users WHERE email = ?";
+            PreparedStatement statement = conexao.prepareStatement(sql);
+            statement.setString(1, name);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                usuario = new Usuario(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("password"),
+                        resultSet.getString("email"),
+                        resultSet.getString("address"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("birthday"),
+                        resultSet.getString("address_num"),
+                        resultSet.getString("city"),
+                        resultSet.getString("state"),
+                        resultSet.getString("cep")
+                );
+            }
+
+            statement.close();
+            conexao.close();
+        } catch (SQLException e) {
+            // Aqui você pode tratar o erro de alguma maneira, por exemplo, logá-lo.
+
+        }
+
+        return usuario; // Retorna o objeto Usuario ou null se não encontrado.
+    }
+
+    public List<Usuario> getAllUsers() {
+        List<Usuario> usuarios = new ArrayList<>();
+        try {
+            Connection conexao = mysql.getConnection();
+            String sql = "SELECT * FROM users";
+            PreparedStatement statement = conexao.prepareStatement(sql);
+
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Usuario usuario = new Usuario(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("password"),
+                        resultSet.getString("email"),
+                        resultSet.getString("address"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("birthday"),
+                        resultSet.getString("address_num"),
+                        resultSet.getString("city"),
+                        resultSet.getString("state"),
+                        resultSet.getString("cep")
+                );
+
+                usuarios.add(usuario);
+            }
+
+            statement.close();
+            conexao.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Trate o erro de alguma forma adequada, como logá-lo ou lançar uma exceção.
+        }
+        return usuarios;
+    }
+    
+    
+
 }
