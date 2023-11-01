@@ -16,11 +16,13 @@ public class BuscaUsuario extends javax.swing.JFrame {
 
     public void atualizarTabela() {
         try {
-            List<String> colunasVisivel = new ArrayList<>(Arrays.asList("id", "name", "email", "phone"));
-            List<Usuario> lista = new Usuario().getAllUsers();
-            TableModel model = TableModelCreator.createTableModel(
-                    Usuario.class, lista, null
-            );
+            List<String> colunasVisivel
+                    = new ArrayList<>(Arrays.asList("id", "name", "email", "phone", "city", "state"));
+            List<Usuario> lista
+                    = new Usuario().getAllUsers();
+            TableModel model
+                    = TableModelCreator.createTableModel(
+                            Usuario.class, lista, colunasVisivel);
             jTable1.setModel(model);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
@@ -44,6 +46,11 @@ public class BuscaUsuario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Buscar usuário");
         setMinimumSize(new java.awt.Dimension(800, 600));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         CodigoInput.setBackground(new java.awt.Color(255, 255, 255));
@@ -112,7 +119,7 @@ public class BuscaUsuario extends javax.swing.JFrame {
         jLabel1.setMinimumSize(new java.awt.Dimension(2000, 1500));
         jLabel1.setPreferredSize(new java.awt.Dimension(2000, 1500));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(-70, 0, 930, 550);
+        jLabel1.setBounds(-70, 0, 930, 560);
 
         pack();
     }// </editor-fold>                        
@@ -138,6 +145,10 @@ public class BuscaUsuario extends javax.swing.JFrame {
         int idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column) + "");
 
         abrirPaginaPerfil(idSelecionado);
+    }                                    
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
+        atualizarTabela();
     }                                    
 
     public static void main(String args[]) {

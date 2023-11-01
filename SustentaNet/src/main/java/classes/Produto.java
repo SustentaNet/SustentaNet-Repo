@@ -1,7 +1,6 @@
 package classes;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,6 +16,10 @@ public class Produto {
     private String description;
     private int user_id;
     private String offer;
+
+    public Produto() {
+        super();
+    }
 
     public Produto(int id, String title, String model, String description, int user_id, String offer) {
         this.id = id;
@@ -130,7 +133,7 @@ public class Produto {
         return produtos;
     }
 
-    public Produto getProdutoById(int id) {
+    public static Produto getProdutoById(int id) {
         Produto produto = null;
         try {
             Connection conexao = mysql.getConnection();
@@ -142,48 +145,47 @@ public class Produto {
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 produto = new Produto(
-                        resultSet.getInt(id),
-                        resultSet.getString(title),
-                        resultSet.getString(model),
-                        resultSet.getString(description),
-                        resultSet.getInt(user_id),
-                        resultSet.getString(offer)
+                        resultSet.getInt("id"),
+                        resultSet.getString("title"),
+                        resultSet.getString("model"),
+                        resultSet.getString("description"),
+                        resultSet.getInt("user_id"),
+                        resultSet.getString("offer")
                 );
-
-                statement.close();
-                conexao.close();
             }
 
+            statement.close();
+            conexao.close();
         } catch (SQLException e) {
+            e.printStackTrace(); // Trate o erro de alguma forma adequada, como logá-lo.
         }
         return produto;
     }
 
-    public Produto getProdutoByName(String nameProd) {
+    public static Produto getProdutoByName(String nameProd) {
         Produto produto = null;
         try {
             Connection conexao = mysql.getConnection();
             String sql = "select * from produtos where name = ?";
             PreparedStatement statement = conexao.prepareStatement(sql);
-
             statement.setString(1, nameProd);
 
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 produto = new Produto(
-                        resultSet.getInt(id),
-                        resultSet.getString(title),
-                        resultSet.getString(model),
-                        resultSet.getString(description),
-                        resultSet.getInt(user_id),
-                        resultSet.getString(offer)
+                        resultSet.getInt("id"),
+                        resultSet.getString("title"),
+                        resultSet.getString("model"),
+                        resultSet.getString("description"),
+                        resultSet.getInt("user_id"),
+                        resultSet.getString("offer")
                 );
-
-                statement.close();
-                conexao.close();
             }
 
+            statement.close();
+            conexao.close();
         } catch (SQLException e) {
+            e.printStackTrace(); // Trate o erro de alguma forma adequada, como logá-lo.
         }
         return produto;
     }

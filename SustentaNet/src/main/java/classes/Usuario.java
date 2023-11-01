@@ -234,7 +234,7 @@ public class Usuario {
         Usuario usuario = null;
         try {
             Connection conexao = mysql.getConnection();
-            String sql = "SELECT * FROM users WHERE email = ?";
+            String sql = "SELECT * FROM users WHERE name = ?";
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.setString(1, name);
 
