@@ -215,7 +215,7 @@ public class BuscaItem extends javax.swing.JFrame {
             }
 
             TableModel model = TableModelCreator.createTableModel(
-                    Usuario.class, lista, null
+                    Usuario.class, lista, colunasVisivel
             );
             jTable1.setModel(model);
         } catch (Exception ex) {
@@ -231,7 +231,7 @@ public class BuscaItem extends javax.swing.JFrame {
             List<Produto> lista = (List<Produto>) Produto.getProdutoByName(name);
 
             TableModel model = TableModelCreator.createTableModel(
-                    Produto.class, lista, null
+                    Produto.class, lista, colunasVisivel
             );
             jTable1.setModel(model);
         } catch (Exception ex) {
