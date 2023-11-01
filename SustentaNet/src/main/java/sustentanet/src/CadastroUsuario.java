@@ -53,7 +53,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jDialog1 = new javax.swing.JDialog();
@@ -274,9 +274,9 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jLabel3.setBounds(-40, 0, 960, 540);
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
+    private void salvarActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
             Usuario usuario = new Usuario();
             usuario.setUser(
@@ -290,18 +290,22 @@ public class CadastroUsuario extends javax.swing.JFrame {
                     getCidade(),
                     getEstado(),
                     getCEP());
+
+            this.dispose();
+            TelaLogin telaLogin = new TelaLogin();
+            telaLogin.setVisible(true);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Por favor, insira valores numéricos inteiros para Número da residência e Data de Nascimento.", "Erro", JOptionPane.ERROR_MESSAGE);
             limparCampos();
         }
-    }//GEN-LAST:event_salvarActionPerformed
+    }                                      
 
-    private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
+    private void sairActionPerformed(java.awt.event.ActionEvent evt) {                                     
 
         this.dispose();
         TelaLogin telaLogin = new TelaLogin();
         telaLogin.setVisible(true);
-    }//GEN-LAST:event_sairActionPerformed
+    }                                    
 
     private void limparCampos() {
         email.setText("");
@@ -352,7 +356,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         });
 
     }
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JFormattedTextField cep;
     private javax.swing.JFormattedTextField cidade;
     private javax.swing.JFormattedTextField email;
@@ -382,5 +386,5 @@ public class CadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel textSenha;
     private javax.swing.JLabel textTelefonme;
     private javax.swing.JLabel textnome;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }

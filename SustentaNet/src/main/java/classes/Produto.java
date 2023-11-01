@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import src.connection.mysql;
 
 public class Produto {
@@ -16,18 +17,22 @@ public class Produto {
     private String description;
     private int user_id;
     private String offer;
+    private String marca;
+    private String category;
 
     public Produto() {
         super();
     }
 
-    public Produto(int id, String title, String model, String description, int user_id, String offer) {
+    public Produto(int id, String title, String model, String description, int user_id, String offer, String marca, String category) {
         this.id = id;
         this.title = title;
         this.model = model;
         this.description = description;
         this.user_id = user_id;
         this.offer = offer;
+        this.marca = marca;
+        this.category = category;
     }
 
     public int getId() {
@@ -78,17 +83,35 @@ public class Produto {
         this.offer = offer;
     }
 
-    public void setProduto() {
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setProduto(String title1, String description1, String model1, String marca1, String offer1, String category1, String userId) {
         try {
             Connection conexao = mysql.getConnection();
-            String sql = "insert into Produtos (title, model, description, user_id, offer) values (?, ?, ?, ?, ?)";
+            String sql = "insert into Produtos (title, model, description, user_id, offer, marca, category) values (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = conexao.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
-            statement.setString(1, this.title);
-            statement.setString(2, this.model);
-            statement.setString(3, this.description);
-            statement.setInt(4, this.user_id);
-            statement.setString(5, this.offer);
+            statement.setString(1, title1);
+            statement.setString(2, model1);
+            statement.setString(3, description1);
+            statement.setInt(4, Integer.parseInt(userId)); // Converta o userId para um inteiro, se necessário.
+            statement.setString(5, offer1);
+            statement.setString(6, marca1);
+            statement.setString(7, category1);
 
             statement.executeUpdate();
 
@@ -100,6 +123,7 @@ public class Produto {
             statement.close();
             conexao.close();
         } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -118,7 +142,9 @@ public class Produto {
                         resultSet.getString("model"),
                         resultSet.getString("description"),
                         resultSet.getInt("user_id"),
-                        resultSet.getString("offer")
+                        resultSet.getString("offer"),
+                        resultSet.getString("marca"),
+                        resultSet.getString("category")
                 );
 
                 produtos.add(produto);
@@ -150,7 +176,9 @@ public class Produto {
                         resultSet.getString("model"),
                         resultSet.getString("description"),
                         resultSet.getInt("user_id"),
-                        resultSet.getString("offer")
+                        resultSet.getString("offer"),
+                        resultSet.getString("marca"),
+                        resultSet.getString("category")
                 );
             }
 
@@ -178,7 +206,9 @@ public class Produto {
                         resultSet.getString("model"),
                         resultSet.getString("description"),
                         resultSet.getInt("user_id"),
-                        resultSet.getString("offer")
+                        resultSet.getString("offer"),
+                        resultSet.getString("marca"),
+                        resultSet.getString("category")
                 );
             }
 

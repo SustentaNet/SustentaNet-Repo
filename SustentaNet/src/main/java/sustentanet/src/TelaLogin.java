@@ -5,6 +5,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import java.awt.event.KeyEvent;
 import java.util.Date;
+import utils.TokenSingleton;
 
 public class TelaLogin extends javax.swing.JFrame {
 
@@ -13,7 +14,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
@@ -129,17 +130,19 @@ public class TelaLogin extends javax.swing.JFrame {
 
         pack();
         setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void sign_inActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sign_inActionPerformed
+    private void sign_inActionPerformed(java.awt.event.ActionEvent evt) {                                        
         String email = emailInput.getText();
         String senha = String.valueOf(senhaInput.getPassword());
-
+        
         Usuario usuario = Usuario.getUserByEmail(email);
+        int id = usuario.getId();
 
         if (usuario != null && usuario.getPassword().equals(senha) && usuario.getEmail().equals(email)) {
-            String token = gerarToken(email, usuario.getId());
-
+            String token = gerarToken(id);
+            TokenSingleton.getInstance().setToken(token);
+            
             System.out.println("Autenticação bem-sucedida");
             System.out.println("Token gerado: " + token);
             System.out.println(token);
@@ -151,25 +154,25 @@ public class TelaLogin extends javax.swing.JFrame {
         } else {
             System.out.println("Autenticação falhou");
         }
-    }//GEN-LAST:event_sign_inActionPerformed
+    }                                       
 
-    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {                                       
 
         System.exit(0);
 
-    }//GEN-LAST:event_cancelActionPerformed
+    }                                      
 
-    private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
+    private void registrarActionPerformed(java.awt.event.ActionEvent evt) {                                          
         this.dispose();
         CadastroUsuario cadastro = new CadastroUsuario();
         cadastro.setVisible(true);
-    }//GEN-LAST:event_registrarActionPerformed
+    }                                         
 
-    private void senhaInputKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_senhaInputKeyPressed
+    private void senhaInputKeyPressed(java.awt.event.KeyEvent evt) {                                      
         if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
             sign_in.doClick();
         }
-    }//GEN-LAST:event_senhaInputKeyPressed
+    }                                     
 
     /**
      * @param args the command line arguments
@@ -206,13 +209,12 @@ public class TelaLogin extends javax.swing.JFrame {
         });
     }
 
-    private String gerarToken(String email, int id) {
+    private String gerarToken(int id) {
         String chaveSecreta = "susnet";
         Date dataExpiracao = new Date(System.currentTimeMillis() + 3600000);
 
         String token = Jwts.builder()
-                .setSubject(email)
-                .claim("id", id)
+                .setSubject(String.valueOf(id))
                 .setExpiration(dataExpiracao)
                 .signWith(SignatureAlgorithm.HS512, chaveSecreta)
                 .compact();
@@ -220,7 +222,7 @@ public class TelaLogin extends javax.swing.JFrame {
         return token;
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton cancel;
     private javax.swing.JFormattedTextField emailInput;
     private javax.swing.JLabel jLabel1;
@@ -232,5 +234,5 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JButton registrar;
     private javax.swing.JPasswordField senhaInput;
     private javax.swing.JButton sign_in;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
