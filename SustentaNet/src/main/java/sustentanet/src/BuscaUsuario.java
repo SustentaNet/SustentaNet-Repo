@@ -16,13 +16,10 @@ public class BuscaUsuario extends javax.swing.JFrame {
 
     public void atualizarTabela() {
         try {
-            List<String> colunasVisivel
-                    = new ArrayList<>(Arrays.asList("id", "name", "email", "phone", "city", "state"));
-            List<Usuario> lista
-                    = new Usuario().getAllUsers();
-            TableModel model
-                    = TableModelCreator.createTableModel(
-                            Usuario.class, lista, colunasVisivel);
+            List<String> colunas = Arrays.asList("id", "name", "email", "phone", "state");
+
+            List<Usuario> lista = new Usuario().getAllUsers();
+            TableModel model = TableModelCreator.createTableModel(Usuario.class, lista, colunas);
             jTable1.setModel(model);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());

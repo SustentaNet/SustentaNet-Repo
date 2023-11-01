@@ -19,17 +19,15 @@ import utils.TableModelCreator;
  */
 public class BuscaItem extends javax.swing.JFrame {
 
-    /**
-     * Creates new form BuscaItem
-     */
+    private List<String> colunasVisivel
+            = new ArrayList<>(Arrays.asList("id", "nome", "descricao", "modelo", "offer"));
+
     public BuscaItem() {
         initComponents();
     }
 
     public void atualizarTabela() {
         try {
-            List<String> colunasVisivel
-                    = new ArrayList<>(Arrays.asList("id", "title", "description", "model", "offer"));
             List<Produto> lista
                     = new Produto().getProdutos();
             TableModel model
@@ -205,8 +203,6 @@ public class BuscaItem extends javax.swing.JFrame {
     }
 
     private void buscarProdutoId(int codigo) {
-        List<String> colunasVisivel
-                = new ArrayList<>(Arrays.asList("id", "title", "description", "model", "offer"));
         try {
             List<Usuario> lista = new ArrayList<>();
             Usuario usuario = new Usuario().getUser(codigo);
@@ -225,8 +221,6 @@ public class BuscaItem extends javax.swing.JFrame {
 
     private void buscarProdutoNome() {
         String name = firstInput.getText();
-        List<String> colunasVisivel
-                = new ArrayList<>(Arrays.asList("id", "title", "description", "model", "offer"));
         try {
             List<Produto> lista = (List<Produto>) Produto.getProdutoByName(name);
 
