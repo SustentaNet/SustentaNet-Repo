@@ -1,9 +1,10 @@
 package sustentanet.src;
 
 import classes.Produto;
+import classes.Usuario;
 
 public class InterfaceItem extends javax.swing.JFrame {
-    
+
     private int produtoId;
 
     public InterfaceItem(int produtoId) {
@@ -196,7 +197,7 @@ public class InterfaceItem extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sustentanet/src/img/landscape-7283516_960_720.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\NetBeansProjects\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\landscape-7283516_960_720.jpg")); // NOI18N
         jLabel3.setMaximumSize(new java.awt.Dimension(800, 750));
         jLabel3.setMinimumSize(new java.awt.Dimension(800, 750));
         jLabel3.setPreferredSize(new java.awt.Dimension(800, 750));
@@ -206,9 +207,12 @@ public class InterfaceItem extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    /**
-     * @param args the command line arguments
-     */
+    private void abrirPaginaPerfil(int id) {
+        this.dispose();
+        PerfilUsuario perfilUsuario = new PerfilUsuario(id);
+        perfilUsuario.setVisible(true);
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
