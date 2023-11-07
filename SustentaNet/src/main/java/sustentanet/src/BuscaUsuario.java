@@ -5,10 +5,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JTable;
+import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 import utils.TableModelCreator;
 
 public class BuscaUsuario extends javax.swing.JFrame {
+
+    private static BuscaUsuario myInstance;
+    private int idSelecionado = 0;
+
+    public static BuscaUsuario getInstance() {
+        if (myInstance == null) {
+            myInstance = new BuscaUsuario();
+        }
+        return myInstance;
+    }
 
     public BuscaUsuario() {
         initComponents();
@@ -24,6 +35,12 @@ public class BuscaUsuario extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
+        oraganizarTabela();
+    }
+
+    public void oraganizarTabela() {
+        jTable1.getTableHeader().getColumnModel().moveColumn(0, 1);
+        jTable1.getTableHeader().getColumnModel().moveColumn(1, 2);
     }
 
     @SuppressWarnings("unchecked")
@@ -37,6 +54,7 @@ public class BuscaUsuario extends javax.swing.JFrame {
         nomeInput = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        go = new javax.swing.JButton();
         Buscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -99,6 +117,19 @@ public class BuscaUsuario extends javax.swing.JFrame {
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(70, 250, 610, 20);
 
+        go.setBackground(new java.awt.Color(255, 255, 255));
+        go.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        go.setForeground(new java.awt.Color(0, 0, 0));
+        go.setText("Ir");
+        go.setEnabled(false);
+        go.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goActionPerformed(evt);
+            }
+        });
+        getContentPane().add(go);
+        go.setBounds(610, 220, 80, 20);
+
         Buscar.setBackground(new java.awt.Color(255, 255, 255));
         Buscar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         Buscar.setForeground(new java.awt.Color(0, 0, 0));
@@ -109,7 +140,7 @@ public class BuscaUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Buscar);
-        Buscar.setBounds(570, 210, 80, 23);
+        Buscar.setBounds(490, 220, 80, 23);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\NetBeansProjects\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\gui-2311259_960_720.png")); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(2000, 1500));
@@ -138,15 +169,21 @@ public class BuscaUsuario extends javax.swing.JFrame {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {                                     
         JTable source = (JTable) evt.getSource();
         int row = source.rowAtPoint(evt.getPoint());
-        int column = jTable1.convertColumnIndexToView(jTable1.getColumn("id").getModelIndex());
-        int idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column) + "");
+        int column = jTable1.convertColumnIndexToView(jTable1.getColumn("Name ").getModelIndex());
 
-        abrirPaginaPerfil(idSelecionado);
+        idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column).toString());
+        go.setEnabled(true);
+        
+        System.out.println("idSelecionado: " + idSelecionado);
     }                                    
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
         atualizarTabela();
     }                                    
+
+    private void goActionPerformed(java.awt.event.ActionEvent evt) {                                   
+        abrirPaginaPerfil(idSelecionado);
+    }                                  
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -222,6 +259,7 @@ public class BuscaUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify                     
     private javax.swing.JButton Buscar;
     private javax.swing.JTextField CodigoInput;
+    private javax.swing.JButton go;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;

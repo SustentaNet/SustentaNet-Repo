@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package sustentanet.src;
 
 import classes.Produto;
@@ -13,14 +9,20 @@ import javax.swing.JTable;
 import javax.swing.table.TableModel;
 import utils.TableModelCreator;
 
-/**
- *
- * @author bonil
- */
 public class BuscaItem extends javax.swing.JFrame {
 
     private List<String> colunasVisivel
             = new ArrayList<>(Arrays.asList("id", "nome", "descricao", "modelo", "offer"));
+
+    private static BuscaItem myInstance;
+    private int idSelecionado = 0;
+
+    public static BuscaItem getInstance() {
+        if (myInstance == null) {
+            myInstance = new BuscaItem();
+        }
+        return myInstance;
+    }
 
     public BuscaItem() {
         initComponents();
@@ -37,6 +39,15 @@ public class BuscaItem extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
+        organizarTabela();
+    }
+
+    public void organizarTabela() {
+        jTable1.getTableHeader().getColumnModel().moveColumn(0, 1);
+        jTable1.getTableHeader().getColumnModel().moveColumn(1, 3);
+        jTable1.getTableHeader().getColumnModel().moveColumn(3, 1);
+        jTable1.getTableHeader().getColumnModel().moveColumn(2, 3);
+        jTable1.getTableHeader().getColumnModel().moveColumn(1, 2);
     }
 
     @SuppressWarnings("unchecked")
@@ -50,6 +61,7 @@ public class BuscaItem extends javax.swing.JFrame {
         offerInput = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        go = new javax.swing.JButton();
         Buscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -118,6 +130,19 @@ public class BuscaItem extends javax.swing.JFrame {
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(70, 240, 610, 20);
 
+        go.setBackground(new java.awt.Color(255, 255, 255));
+        go.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        go.setForeground(new java.awt.Color(0, 0, 0));
+        go.setText("Ir");
+        go.setEnabled(false);
+        go.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goActionPerformed(evt);
+            }
+        });
+        getContentPane().add(go);
+        go.setBounds(620, 210, 80, 23);
+
         Buscar.setBackground(new java.awt.Color(255, 255, 255));
         Buscar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         Buscar.setForeground(new java.awt.Color(0, 0, 0));
@@ -128,7 +153,7 @@ public class BuscaItem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Buscar);
-        Buscar.setBounds(600, 210, 80, 23);
+        Buscar.setBounds(520, 210, 80, 23);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\NetBeansProjects\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\gui-2311259_960_720.png")); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(2000, 1500));
@@ -155,15 +180,16 @@ public class BuscaItem extends javax.swing.JFrame {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {                                     
         JTable source = (JTable) evt.getSource();
         int row = source.rowAtPoint(evt.getPoint());
-        int column = jTable1.convertColumnIndexToView(jTable1.getColumn("id").getModelIndex());
-        int idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column) + "");
-
-        abrirPaginaItem(idSelecionado);
+        int column = jTable1.convertColumnIndexToView(jTable1.getColumn("Nome ").getModelIndex());
+        idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column) + "");
+        
+        go.setEnabled(true);
     }                                    
 
-    /**
-     * @param args the command line arguments
-     */
+    private void goActionPerformed(java.awt.event.ActionEvent evt) {                                   
+        abrirPaginaItem(idSelecionado);
+    }                                  
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -198,6 +224,7 @@ public class BuscaItem extends javax.swing.JFrame {
     }
 
     private void abrirPaginaItem(int id) {
+        this.dispose();
         InterfaceItem interfaceItem = new InterfaceItem(id);
         interfaceItem.setVisible(true);
     }
@@ -236,6 +263,7 @@ public class BuscaItem extends javax.swing.JFrame {
     // Variables declaration - do not modify                     
     private javax.swing.JButton Buscar;
     private javax.swing.JTextField firstInput;
+    private javax.swing.JButton go;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
