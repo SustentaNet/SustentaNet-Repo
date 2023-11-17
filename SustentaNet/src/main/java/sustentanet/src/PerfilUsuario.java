@@ -9,16 +9,20 @@ public class PerfilUsuario extends javax.swing.JFrame {
     public PerfilUsuario(int userId) {
         initComponents();
         this.userId = userId;
-    }
-
-    public PerfilUsuario() {
-        initComponents();
+        carregarDetalhesDoPerfil();
     }
 
     private void carregarDetalhesDoPerfil() {
 
-        Usuario usuario = new Usuario().getUser(userId);
-
+        Usuario usuario = Usuario.getUser(userId);
+        
+        nometxt.setText(usuario.getName());
+        ceptxt.setText(usuario.getCep());
+        emailtxt.setText(usuario.getEmail());
+        phonetxt.setText(usuario.getPhone());
+        cidadetxt.setText(usuario.getCity());
+        estadotxt.setText(usuario.getState());
+        aniversariotxt.setText(usuario.getBirthday());
     }
 
 
@@ -28,23 +32,23 @@ public class PerfilUsuario extends javax.swing.JFrame {
 
         jDialog1 = new javax.swing.JDialog();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        emailtxt = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel5 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        itens = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        estadotxt = new javax.swing.JLabel();
+        cidadetxt = new javax.swing.JLabel();
+        nometxt = new javax.swing.JLabel();
+        ceptxt = new javax.swing.JLabel();
+        aniversariotxt = new javax.swing.JLabel();
+        sair = new javax.swing.JButton();
+        phonetxt = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane4 = new javax.swing.JTextPane();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -59,171 +63,174 @@ public class PerfilUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Perfil do usuário");
-        setMinimumSize(new java.awt.Dimension(730, 600));
+        setMaximumSize(new java.awt.Dimension(600, 479));
+        setMinimumSize(new java.awt.Dimension(600, 479));
+        setPreferredSize(new java.awt.Dimension(600, 515));
+        setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel7.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Localização");
+        jLabel7.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Aniversário");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(380, 60, 150, 16);
+        jLabel7.setBounds(250, 110, 120, 20);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Ver contatos");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(460, 290, 170, 70);
-
-        jLabel4.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Contato");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(510, 260, 130, 16);
-
-        jLabel15.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel15.setText("NOME DO USUÁRIO");
-        getContentPane().add(jLabel15);
-        jLabel15.setBounds(380, 20, 260, 18);
-
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Breve descrição");
-        jScrollPane1.setViewportView(jTextArea1);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(380, 90, 320, 130);
-
-        jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Avaliações");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(120, 260, 130, 16);
-
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("Consultar");
-        getContentPane().add(jButton4);
-        jButton4.setBounds(460, 430, 170, 70);
-
-        jLabel6.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Itens disponíveis");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(490, 400, 130, 16);
-
-        jTextPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextPane1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jTextPane1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextPane1.setText("Texto de avaliação");
-        jScrollPane5.setViewportView(jTextPane1);
-
-        getContentPane().add(jScrollPane5);
-        jScrollPane5.setBounds(30, 450, 350, 50);
-
-        jTextPane2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextPane2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jTextPane2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextPane2.setText("Texto de avaliação");
-        jScrollPane6.setViewportView(jTextPane2);
-
-        getContentPane().add(jScrollPane6);
-        jScrollPane6.setBounds(30, 290, 350, 50);
-
-        jTextPane3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextPane3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jTextPane3.setForeground(new java.awt.Color(0, 0, 0));
-        jTextPane3.setText("Texto de avaliação");
-        jScrollPane7.setViewportView(jTextPane3);
-
-        getContentPane().add(jScrollPane7);
-        jScrollPane7.setBounds(30, 370, 350, 50);
-
-        jTextPane4.setBackground(new java.awt.Color(204, 204, 204));
-        jScrollPane3.setViewportView(jTextPane4);
-
-        getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(50, 70, 180, 160);
-
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\NetBeansProjects\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\watercolor-2419592_960_720.jpg")); // NOI18N
-        jLabel3.setMaximumSize(new java.awt.Dimension(800, 750));
-        jLabel3.setMinimumSize(new java.awt.Dimension(800, 750));
-        jLabel3.setPreferredSize(new java.awt.Dimension(800, 750));
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 720, 550);
-
-        pack();
-    }// </editor-fold>                        
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PerfilUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PerfilUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PerfilUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PerfilUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PerfilUsuario().setVisible(true);
+        emailtxt.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        emailtxt.setText("Email");
+        emailtxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailtxtActionPerformed(evt);
             }
         });
-    }
+        getContentPane().add(emailtxt);
+        emailtxt.setBounds(170, 390, 130, 70);
+
+        jLabel4.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Contatos");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(260, 340, 100, 30);
+
+        jLabel15.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("NOME DO USUÁRIO");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(230, 20, 160, 40);
+
+        itens.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        itens.setText("Ver Itens");
+        itens.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itensActionPerformed(evt);
+            }
+        });
+        getContentPane().add(itens);
+        itens.setBounds(470, 390, 100, 70);
+
+        jLabel10.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Cidade");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(250, 210, 120, 20);
+
+        jLabel12.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Estado");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(30, 210, 120, 20);
+
+        jLabel11.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("CEP");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(470, 210, 90, 20);
+
+        estadotxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        estadotxt.setText("jLabel1");
+        getContentPane().add(estadotxt);
+        estadotxt.setBounds(60, 260, 100, 16);
+
+        cidadetxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cidadetxt.setText("jLabel1");
+        getContentPane().add(cidadetxt);
+        cidadetxt.setBounds(270, 260, 100, 16);
+
+        nometxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nometxt.setText("jLabel1");
+        getContentPane().add(nometxt);
+        nometxt.setBounds(260, 70, 100, 16);
+
+        ceptxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ceptxt.setText("jLabel1");
+        getContentPane().add(ceptxt);
+        ceptxt.setBounds(470, 260, 90, 16);
+
+        aniversariotxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        aniversariotxt.setText("jLabel1");
+        getContentPane().add(aniversariotxt);
+        aniversariotxt.setBounds(250, 150, 130, 16);
+
+        sair.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        sair.setText("Sair");
+        sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(sair);
+        sair.setBounds(40, 410, 80, 30);
+
+        phonetxt.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        phonetxt.setText("phone");
+        phonetxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phonetxtActionPerformed(evt);
+            }
+        });
+        getContentPane().add(phonetxt);
+        phonetxt.setBounds(310, 390, 130, 70);
+
+        jLabel6.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Disponíveis");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(450, 350, 130, 23);
+
+        jLabel8.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Itens ");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(480, 320, 80, 23);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\SustentaNet(versão final)\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\Capa de Fundo SustentaNet.png")); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(-20, -20, 690, 650);
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>                        
+
+    private void itensActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        this.dispose();
+        viewItem itens = new viewItem(userId);
+        itens.setVisible(true);
+    }                                     
+
+    private void emailtxtActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void phonetxtActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void sairActionPerformed(java.awt.event.ActionEvent evt) {                                     
+        this.dispose();
+        Menu menu = new Menu();
+        menu.setVisible(true);
+    }                                    
+
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel aniversariotxt;
+    private javax.swing.JLabel ceptxt;
+    private javax.swing.JLabel cidadetxt;
+    private javax.swing.JButton emailtxt;
+    private javax.swing.JLabel estadotxt;
+    private javax.swing.JButton itens;
     private javax.swing.JDialog jDialog1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane3;
-    private javax.swing.JTextPane jTextPane4;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel nometxt;
+    private javax.swing.JButton phonetxt;
+    private javax.swing.JButton sair;
     // End of variables declaration                   
 }

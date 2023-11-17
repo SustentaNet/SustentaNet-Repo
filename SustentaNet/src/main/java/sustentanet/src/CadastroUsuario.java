@@ -67,7 +67,6 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jFormattedTextField5 = new javax.swing.JFormattedTextField();
         textEmail = new javax.swing.JLabel();
         textCep = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         textSenha = new javax.swing.JLabel();
         senha = new javax.swing.JFormattedTextField();
         nome = new javax.swing.JFormattedTextField();
@@ -79,12 +78,11 @@ public class CadastroUsuario extends javax.swing.JFrame {
         cidade = new javax.swing.JFormattedTextField();
         textEstado = new javax.swing.JLabel();
         estado = new javax.swing.JFormattedTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         salvar = new javax.swing.JButton();
         sair = new javax.swing.JButton();
         textnome = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        texto2 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -99,143 +97,85 @@ public class CadastroUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Usuário");
-        setMinimumSize(new java.awt.Dimension(900, 600));
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(810, 630));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Confirmar senha");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(90, 330, 110, 16);
-
-        email.setBackground(new java.awt.Color(255, 255, 255));
-        email.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setBounds(30, 380, 150, 16);
         getContentPane().add(email);
-        email.setBounds(90, 150, 280, 22);
-
-        telefone.setBackground(new java.awt.Color(255, 255, 255));
-        telefone.setForeground(new java.awt.Color(0, 0, 0));
+        email.setBounds(30, 200, 320, 22);
         getContentPane().add(telefone);
-        telefone.setBounds(90, 200, 280, 22);
-
-        cep.setBackground(new java.awt.Color(255, 255, 255));
-        cep.setForeground(new java.awt.Color(0, 0, 0));
+        telefone.setBounds(30, 250, 320, 22);
         getContentPane().add(cep);
-        cep.setBounds(520, 300, 280, 22);
+        cep.setBounds(450, 360, 320, 22);
 
         textNascimento.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textNascimento.setForeground(new java.awt.Color(0, 0, 0));
         textNascimento.setText("Data de nascimento");
         getContentPane().add(textNascimento);
-        textNascimento.setBounds(90, 230, 140, 16);
+        textNascimento.setBounds(30, 280, 180, 16);
 
         textTelefonme.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textTelefonme.setForeground(new java.awt.Color(0, 0, 0));
         textTelefonme.setText("Telefone");
         getContentPane().add(textTelefonme);
-        textTelefonme.setBounds(90, 180, 60, 16);
-
-        nascimento.setBackground(new java.awt.Color(255, 255, 255));
-        nascimento.setForeground(new java.awt.Color(0, 0, 0));
+        textTelefonme.setBounds(30, 230, 100, 16);
         getContentPane().add(nascimento);
-        nascimento.setBounds(90, 250, 280, 22);
-
-        jFormattedTextField5.setBackground(new java.awt.Color(255, 255, 255));
-        jFormattedTextField5.setForeground(new java.awt.Color(0, 0, 0));
+        nascimento.setBounds(30, 300, 320, 22);
         getContentPane().add(jFormattedTextField5);
-        jFormattedTextField5.setBounds(90, 350, 280, 22);
+        jFormattedTextField5.setBounds(30, 400, 320, 22);
 
         textEmail.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textEmail.setForeground(new java.awt.Color(0, 0, 0));
         textEmail.setText("E-mail");
         getContentPane().add(textEmail);
-        textEmail.setBounds(90, 130, 50, 16);
+        textEmail.setBounds(30, 180, 90, 16);
 
         textCep.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textCep.setForeground(new java.awt.Color(0, 0, 0));
         textCep.setText("CEP");
         getContentPane().add(textCep);
-        textCep.setBounds(520, 280, 70, 16);
-
-        jLabel10.setText("jLabel10");
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(120, 250, 45, 16);
+        textCep.setBounds(450, 340, 110, 16);
 
         textSenha.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textSenha.setForeground(new java.awt.Color(0, 0, 0));
         textSenha.setText("Senha");
         getContentPane().add(textSenha);
-        textSenha.setBounds(90, 280, 70, 16);
-
-        senha.setBackground(new java.awt.Color(255, 255, 255));
-        senha.setForeground(new java.awt.Color(0, 0, 0));
+        textSenha.setBounds(30, 330, 110, 16);
         getContentPane().add(senha);
-        senha.setBounds(90, 300, 280, 22);
-
-        nome.setBackground(new java.awt.Color(255, 255, 255));
-        nome.setForeground(new java.awt.Color(0, 0, 0));
+        senha.setBounds(30, 350, 320, 22);
         getContentPane().add(nome);
-        nome.setBounds(90, 100, 280, 22);
+        nome.setBounds(30, 150, 320, 22);
 
         textAddress.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textAddress.setForeground(new java.awt.Color(0, 0, 0));
         textAddress.setText("Endereço");
         getContentPane().add(textAddress);
-        textAddress.setBounds(520, 80, 70, 16);
-
-        endereco.setBackground(new java.awt.Color(255, 255, 255));
-        endereco.setForeground(new java.awt.Color(0, 0, 0));
+        textAddress.setBounds(450, 140, 110, 16);
         getContentPane().add(endereco);
-        endereco.setBounds(520, 100, 280, 22);
+        endereco.setBounds(450, 160, 320, 22);
 
         textNumero.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textNumero.setForeground(new java.awt.Color(0, 0, 0));
         textNumero.setText("Número");
         getContentPane().add(textNumero);
-        textNumero.setBounds(520, 130, 70, 16);
-
-        endereco_num.setBackground(new java.awt.Color(255, 255, 255));
-        endereco_num.setForeground(new java.awt.Color(0, 0, 0));
+        textNumero.setBounds(450, 190, 110, 16);
         getContentPane().add(endereco_num);
-        endereco_num.setBounds(520, 150, 280, 22);
+        endereco_num.setBounds(450, 210, 320, 22);
 
         textCidade.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textCidade.setForeground(new java.awt.Color(0, 0, 0));
         textCidade.setText("Cidade");
         getContentPane().add(textCidade);
-        textCidade.setBounds(520, 180, 70, 16);
-
-        cidade.setBackground(new java.awt.Color(255, 255, 255));
-        cidade.setForeground(new java.awt.Color(0, 0, 0));
+        textCidade.setBounds(450, 240, 110, 16);
         getContentPane().add(cidade);
-        cidade.setBounds(520, 200, 280, 22);
+        cidade.setBounds(450, 260, 320, 22);
 
         textEstado.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textEstado.setForeground(new java.awt.Color(0, 0, 0));
         textEstado.setText("Estado");
         getContentPane().add(textEstado);
-        textEstado.setBounds(520, 230, 70, 16);
-
-        estado.setBackground(new java.awt.Color(255, 255, 255));
-        estado.setForeground(new java.awt.Color(0, 0, 0));
+        textEstado.setBounds(450, 290, 110, 16);
         getContentPane().add(estado);
-        estado.setBounds(520, 250, 280, 22);
+        estado.setBounds(450, 310, 320, 22);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Buscar...");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(520, 350, 90, 23);
-
-        jLabel4.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Adicionar foto");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(520, 330, 100, 16);
-
-        salvar.setBackground(new java.awt.Color(255, 255, 255));
-        salvar.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        salvar.setForeground(new java.awt.Color(0, 0, 0));
+        salvar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         salvar.setText("Salvar");
         salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,11 +183,9 @@ public class CadastroUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(salvar);
-        salvar.setBounds(720, 450, 80, 40);
+        salvar.setBounds(680, 540, 80, 30);
 
-        sair.setBackground(new java.awt.Color(255, 255, 255));
-        sair.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        sair.setForeground(new java.awt.Color(0, 0, 0));
+        sair.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         sair.setText("Sair");
         sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,25 +193,26 @@ public class CadastroUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(sair);
-        sair.setBounds(520, 450, 80, 40);
+        sair.setBounds(30, 540, 70, 30);
 
         textnome.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textnome.setForeground(new java.awt.Color(0, 0, 0));
         textnome.setText("Nome");
         getContentPane().add(textnome);
-        textnome.setBounds(90, 80, 70, 16);
+        textnome.setBounds(30, 130, 110, 16);
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\NetBeansProjects\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\gui-2906790_960_720.png")); // NOI18N
-        jLabel3.setText("E-mail");
-        jLabel3.setMaximumSize(new java.awt.Dimension(900, 750));
-        jLabel3.setMinimumSize(new java.awt.Dimension(900, 750));
-        jLabel3.setPreferredSize(new java.awt.Dimension(900, 750));
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(-40, 0, 960, 540);
+        texto2.setBackground(new java.awt.Color(255, 255, 255));
+        texto2.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        texto2.setText("Cadastro de Usuários");
+        getContentPane().add(texto2);
+        texto2.setBounds(290, 40, 220, 20);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\SustentaNet(versão final)\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\Capa de Fundo SustentaNet.png")); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(-10, -10, 840, 1080);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>                        
 
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {                                       
@@ -363,13 +302,10 @@ public class CadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField endereco;
     private javax.swing.JFormattedTextField endereco_num;
     private javax.swing.JFormattedTextField estado;
-    private javax.swing.JButton jButton1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFormattedTextField jFormattedTextField5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JFormattedTextField nascimento;
     private javax.swing.JFormattedTextField nome;
     private javax.swing.JButton sair;
@@ -386,5 +322,6 @@ public class CadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel textSenha;
     private javax.swing.JLabel textTelefonme;
     private javax.swing.JLabel textnome;
+    private javax.swing.JLabel texto2;
     // End of variables declaration                   
 }

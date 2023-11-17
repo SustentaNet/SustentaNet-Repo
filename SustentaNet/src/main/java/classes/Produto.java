@@ -108,7 +108,7 @@ public class Produto {
             statement.setString(1, title1);
             statement.setString(2, model1);
             statement.setString(3, description1);
-            statement.setInt(4, Integer.parseInt(userId)); // Converta o userId para um inteiro, se necessário.
+            statement.setInt(4, Integer.parseInt(userId));
             statement.setString(5, offer1);
             statement.setString(6, marca1);
             statement.setString(7, category1);
@@ -154,7 +154,7 @@ public class Produto {
             conexao.close();
 
         } catch (SQLException e) {
-            e.printStackTrace(); // Trate o erro de alguma forma adequada, como logar ou lançar uma exceção.
+            e.printStackTrace();
         }
         return produtos;
     }
@@ -185,7 +185,7 @@ public class Produto {
             statement.close();
             conexao.close();
         } catch (SQLException e) {
-            e.printStackTrace(); // Trate o erro de alguma forma adequada, como logá-lo.
+            e.printStackTrace();
         }
         return produto;
     }
@@ -215,7 +215,7 @@ public class Produto {
             statement.close();
             conexao.close();
         } catch (SQLException e) {
-            e.printStackTrace(); // Trate o erro de alguma forma adequada, como logá-lo.
+            e.printStackTrace();
         }
         return produto;
     }
@@ -243,5 +243,77 @@ public class Produto {
             e.printStackTrace();
         }
     }
+
+  public List<Produto> buscarProdutos(String termoBusca) {
+    List<Produto> produtos = new ArrayList<>();
+
+    try {
+        Connection conexao = mysql.getConnection();
+        String sql = "SELECT * FROM produtos WHERE title LIKE ? OR model LIKE ? OR marca LIKE ?";
+        PreparedStatement statement = conexao.prepareStatement(sql);
+
+        statement.setString(1, "%" + termoBusca + "%");
+        statement.setString(2, "%" + termoBusca + "%");
+        statement.setString(3, "%" + termoBusca + "%");
+
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            Produto produto = new Produto(
+                    resultSet.getInt("id"),
+                    resultSet.getString("title"),
+                    resultSet.getString("model"),
+                    resultSet.getString("description"),
+                    resultSet.getInt("user_id"),
+                    resultSet.getString("offer"),
+                    resultSet.getString("marca"),
+                    resultSet.getString("category")
+            );
+            produtos.add(produto);
+        }
+
+        statement.close();
+        conexao.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return produtos;
+}
+  
+  public static List<Produto> getProdutoByUserId(int userId) {
+    List<Produto> produtos = new ArrayList<>();
+
+    try {
+        Connection conexao = mysql.getConnection();
+        String sql = "SELECT * FROM produtos WHERE user_id = ?";
+        PreparedStatement statement = conexao.prepareStatement(sql);
+
+        statement.setInt(1, userId);
+
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            Produto produto = new Produto(
+                    resultSet.getInt("id"),
+                    resultSet.getString("title"),
+                    resultSet.getString("model"),
+                    resultSet.getString("description"),
+                    resultSet.getInt("user_id"),
+                    resultSet.getString("offer"),
+                    resultSet.getString("marca"),
+                    resultSet.getString("category")
+            );
+            produtos.add(produto);
+        }
+
+        statement.close();
+        conexao.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return produtos;
+}
+
+
 
 }

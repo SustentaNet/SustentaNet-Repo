@@ -161,7 +161,7 @@ public class Usuario {
     }
 
     /* getUsuario*/
-    public Usuario getUser(int id) {
+    public static Usuario getUser(int id) {
         Usuario usuario = null;
         try {
             Connection conexao = mysql.getConnection();
@@ -229,8 +229,8 @@ public class Usuario {
 
         return usuario; // Retorna o objeto Usuario ou null se não encontrado.
     }
-    
-        public static Usuario getUserByName(String name) {
+
+    public static Usuario getUserByName(String name) {
         Usuario usuario = null;
         try {
             Connection conexao = mysql.getConnection();
@@ -299,7 +299,42 @@ public class Usuario {
         }
         return usuarios;
     }
-    
-    
+
+    public List<Usuario> buscarUsuario(String termoBusca) {
+        List<Usuario> usuario = new ArrayList<>();
+
+        try {
+            Connection conexao = mysql.getConnection();
+            String sql = "SELECT * FROM users WHERE name LIKE ?";
+            PreparedStatement statement = conexao.prepareStatement(sql);
+
+            statement.setString(1, "%" + termoBusca + "%");
+
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Usuario user = new Usuario(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("password"),
+                        resultSet.getString("email"),
+                        resultSet.getString("address"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("birthday"),
+                        resultSet.getString("address_num"),
+                        resultSet.getString("city"),
+                        resultSet.getString("state"),
+                        resultSet.getString("cep")
+                );
+                usuario.add(user);
+            }
+
+            statement.close();
+            conexao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return usuario;
+    }
 
 }
