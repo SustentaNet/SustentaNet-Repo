@@ -17,7 +17,7 @@ public class CadastroItem extends javax.swing.JFrame {
 
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jDialog1 = new javax.swing.JDialog();
@@ -33,9 +33,11 @@ public class CadastroItem extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         ofertaInput = new javax.swing.JComboBox<>();
         categoriaInput = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
         modeloInput = new javax.swing.JFormattedTextField();
-        jLabel3 = new javax.swing.JLabel();
+        texto1 = new javax.swing.JLabel();
+        texto2 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -50,51 +52,39 @@ public class CadastroItem extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Item");
-        setMinimumSize(new java.awt.Dimension(900, 600));
+        setMinimumSize(new java.awt.Dimension(810, 650));
+        setPreferredSize(new java.awt.Dimension(815, 650));
+        setResizable(false);
+        setSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Categoria");
+        jLabel1.setText("Categoria:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(90, 190, 110, 16);
-
-        marcaInput.setBackground(new java.awt.Color(255, 255, 255));
-        marcaInput.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setBounds(20, 200, 110, 16);
         getContentPane().add(marcaInput);
-        marcaInput.setBounds(500, 100, 280, 22);
+        marcaInput.setBounds(430, 110, 340, 22);
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Oferta");
+        jLabel5.setText("Oferta:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(500, 140, 140, 16);
+        jLabel5.setBounds(430, 150, 140, 16);
 
         jLabel6.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Modelo");
+        jLabel6.setText("Modelo:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(90, 140, 60, 16);
+        jLabel6.setBounds(20, 150, 60, 16);
 
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Marca");
+        jLabel7.setText("Marca:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(500, 80, 50, 16);
-
-        descricaoInput.setBackground(new java.awt.Color(255, 255, 255));
-        descricaoInput.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setBounds(430, 90, 50, 16);
         getContentPane().add(descricaoInput);
-        descricaoInput.setBounds(90, 280, 700, 90);
-
-        nameInput.setBackground(new java.awt.Color(255, 255, 255));
-        nameInput.setForeground(new java.awt.Color(0, 0, 0));
+        descricaoInput.setBounds(20, 320, 760, 200);
         getContentPane().add(nameInput);
-        nameInput.setBounds(90, 100, 280, 22);
+        nameInput.setBounds(20, 110, 330, 22);
 
-        salvar.setBackground(new java.awt.Color(255, 255, 255));
-        salvar.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        salvar.setForeground(new java.awt.Color(0, 0, 0));
+        salvar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         salvar.setText("Salvar");
         salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,11 +92,9 @@ public class CadastroItem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(salvar);
-        salvar.setBounds(710, 450, 80, 40);
+        salvar.setBounds(700, 550, 80, 30);
 
-        sair.setBackground(new java.awt.Color(255, 255, 255));
-        sair.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        sair.setForeground(new java.awt.Color(0, 0, 0));
+        sair.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         sair.setText("Sair");
         sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,61 +102,56 @@ public class CadastroItem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(sair);
-        sair.setBounds(520, 450, 80, 40);
+        sair.setBounds(20, 550, 80, 30);
 
         jLabel15.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel15.setText("Nome");
+        jLabel15.setText("Nome:");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(90, 80, 70, 16);
+        jLabel15.setBounds(20, 90, 70, 16);
 
-        ofertaInput.setBackground(new java.awt.Color(255, 255, 255));
         ofertaInput.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        ofertaInput.setForeground(new java.awt.Color(0, 0, 0));
         ofertaInput.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Troca", "Doação", "Compartilhar" }));
         ofertaInput.setName(""); // NOI18N
         getContentPane().add(ofertaInput);
-        ofertaInput.setBounds(500, 160, 280, 22);
+        ofertaInput.setBounds(430, 170, 340, 22);
 
-        categoriaInput.setBackground(new java.awt.Color(255, 255, 255));
         categoriaInput.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        categoriaInput.setForeground(new java.awt.Color(0, 0, 0));
         categoriaInput.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Eletrônicos", "Eletrodomésticos", "Ferramentas", "Vestuário", "Livros", "Outros" }));
         getContentPane().add(categoriaInput);
-        categoriaInput.setBounds(90, 210, 280, 22);
-
-        jLabel8.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Descrição");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(90, 260, 70, 16);
-
-        modeloInput.setBackground(new java.awt.Color(255, 255, 255));
-        modeloInput.setForeground(new java.awt.Color(0, 0, 0));
+        categoriaInput.setBounds(20, 220, 330, 22);
         getContentPane().add(modeloInput);
-        modeloInput.setBounds(90, 160, 280, 22);
+        modeloInput.setBounds(20, 170, 330, 22);
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\NetBeansProjects\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\gui-2906790_960_720.png")); // NOI18N
-        jLabel3.setText("E-mail");
-        jLabel3.setMaximumSize(new java.awt.Dimension(900, 750));
-        jLabel3.setMinimumSize(new java.awt.Dimension(900, 750));
-        jLabel3.setPreferredSize(new java.awt.Dimension(900, 750));
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(-40, 0, 960, 540);
+        texto1.setBackground(new java.awt.Color(255, 255, 255));
+        texto1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        texto1.setText("Descrição:");
+        getContentPane().add(texto1);
+        texto1.setBounds(20, 290, 190, 23);
+
+        texto2.setBackground(new java.awt.Color(255, 255, 255));
+        texto2.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        texto2.setText("Cadastro de Itens");
+        getContentPane().add(texto2);
+        texto2.setBounds(300, 40, 190, 20);
+        getContentPane().add(jSeparator2);
+        jSeparator2.setBounds(20, 270, 760, 20);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\SustentaNet(versão final)\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\Capa de Fundo SustentaNet.png")); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(-30, 0, 910, 1080);
 
         pack();
-    }// </editor-fold>                        
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void sairActionPerformed(java.awt.event.ActionEvent evt) {                                     
+    private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
         this.dispose();
         Menu menu = new Menu();
         menu.setVisible(true);
-    }                                    
+    }//GEN-LAST:event_sairActionPerformed
 
-    private void salvarActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
         String title = nameInput.getText();
         String description = descricaoInput.getText();
         String model = modeloInput.getText();
@@ -203,7 +186,7 @@ public class CadastroItem extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error", "Erro", JOptionPane.ERROR_MESSAGE);
             limparCampos();
         }
-    }                                      
+    }//GEN-LAST:event_salvarActionPerformed
 
     public static void main(String args[]) {
 
@@ -247,22 +230,24 @@ public class CadastroItem extends javax.swing.JFrame {
     }
 
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> categoriaInput;
     private javax.swing.JFormattedTextField descricaoInput;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JFormattedTextField marcaInput;
     private javax.swing.JFormattedTextField modeloInput;
     private javax.swing.JFormattedTextField nameInput;
     private javax.swing.JComboBox<String> ofertaInput;
     private javax.swing.JButton sair;
     private javax.swing.JButton salvar;
-    // End of variables declaration                   
+    private javax.swing.JLabel texto1;
+    private javax.swing.JLabel texto2;
+    // End of variables declaration//GEN-END:variables
 }
