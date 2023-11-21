@@ -94,7 +94,7 @@ public class CadastroItem extends javax.swing.JFrame {
         salvar.setBounds(700, 550, 80, 30);
 
         sair.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        sair.setText("Sair");
+        sair.setText("Voltar");
         sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sairActionPerformed(evt);

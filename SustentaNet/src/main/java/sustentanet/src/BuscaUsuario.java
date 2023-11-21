@@ -140,7 +140,7 @@ public class BuscaUsuario extends javax.swing.JFrame {
         go.setBounds(500, 560, 80, 23);
 
         jButton1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton1.setText("Sair");
+        jButton1.setText("Voltar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

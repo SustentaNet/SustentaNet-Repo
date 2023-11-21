@@ -99,7 +99,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         setTitle("Cadastro de Usuário");
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(810, 630));
+        setPreferredSize(new java.awt.Dimension(810, 640));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -186,7 +186,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         salvar.setBounds(680, 540, 80, 30);
 
         sair.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        sair.setText("Sair");
+        sair.setText("Voltar");
         sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sairActionPerformed(evt);

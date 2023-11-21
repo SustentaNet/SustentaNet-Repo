@@ -20,13 +20,12 @@ public class InterfaceItem extends javax.swing.JFrame {
         id = produto.getUser_id();
         Usuario user = Usuario.getUser(id);
 
-        modelotxt.setText(produto.getNome());
-        categoriatxt.setText(produto.getMarca());
+        titletxt.setText(produto.getNome());
+        marcatxt.setText(produto.getMarca());
         modelotxt.setText(produto.getModelo());
         descricaotxt.setText(produto.getDescricao());
         vendedortxt.setText(user.getName());
         categoriatxt.setText(produto.getCategory());
-        titletxt.setText(produto.getNome());
     }
 
     public InterfaceItem() {
@@ -41,15 +40,15 @@ public class InterfaceItem extends javax.swing.JFrame {
         Marca_Modelo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
-        vendedortxt = new javax.swing.JLabel();
-        modelotxt = new javax.swing.JLabel();
-        descricaotxt = new javax.swing.JLabel();
         Marca_Modelo1 = new javax.swing.JLabel();
-        categoriatxt = new javax.swing.JLabel();
         Marca_Modelo3 = new javax.swing.JLabel();
         Marca_Modelo2 = new javax.swing.JLabel();
+        descricaotxt = new javax.swing.JLabel();
+        marcatxt = new javax.swing.JLabel();
+        modelotxt = new javax.swing.JLabel();
+        categoriatxt = new javax.swing.JLabel();
+        vendedortxt = new javax.swing.JLabel();
         titletxt = new javax.swing.JLabel();
-        marcatxt1 = new javax.swing.JLabel();
         voltar = new javax.swing.JButton();
         contato = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -67,107 +66,114 @@ public class InterfaceItem extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Visualizar Item");
-        setMinimumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(null);
+        setPreferredSize(new java.awt.Dimension(730, 555));
         setResizable(false);
         getContentPane().setLayout(null);
 
         Marca_Modelo.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         Marca_Modelo.setForeground(new java.awt.Color(0, 0, 0));
-        Marca_Modelo.setText("Descrição do Item");
+        Marca_Modelo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Marca_Modelo.setText("DESCRIÇÃO DO ITEM");
         getContentPane().add(Marca_Modelo);
-        Marca_Modelo.setBounds(90, 150, 200, 16);
+        Marca_Modelo.setBounds(30, 150, 230, 16);
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Anunciado por");
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("ANUNCIADO POR");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(90, 410, 170, 16);
+        jLabel4.setBounds(460, 410, 200, 16);
 
         title.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         title.setForeground(new java.awt.Color(0, 0, 0));
-        title.setText("Título da Venda");
+        title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title.setText("TÍTULO DA VENDA");
         getContentPane().add(title);
-        title.setBounds(280, 30, 180, 23);
-
-        vendedortxt.setBackground(new java.awt.Color(0, 0, 0));
-        vendedortxt.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        vendedortxt.setForeground(new java.awt.Color(60, 63, 65));
-        vendedortxt.setText("User");
-        getContentPane().add(vendedortxt);
-        vendedortxt.setBounds(90, 440, 130, 50);
-
-        modelotxt.setBackground(new java.awt.Color(0, 0, 0));
-        modelotxt.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        modelotxt.setForeground(new java.awt.Color(0, 0, 0));
-        modelotxt.setText("Modelo");
-        getContentPane().add(modelotxt);
-        modelotxt.setBounds(470, 300, 170, 60);
-
-        descricaotxt.setBackground(new java.awt.Color(0, 0, 0));
-        descricaotxt.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        descricaotxt.setForeground(new java.awt.Color(0, 0, 0));
-        descricaotxt.setText("Descrição");
-        getContentPane().add(descricaotxt);
-        descricaotxt.setBounds(90, 170, 350, 80);
+        title.setBounds(270, 30, 210, 23);
 
         Marca_Modelo1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         Marca_Modelo1.setForeground(new java.awt.Color(0, 0, 0));
-        Marca_Modelo1.setText("Categoria");
+        Marca_Modelo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Marca_Modelo1.setText("CATEGORIA");
         getContentPane().add(Marca_Modelo1);
-        Marca_Modelo1.setBounds(90, 270, 110, 20);
-
-        categoriatxt.setBackground(new java.awt.Color(0, 0, 0));
-        categoriatxt.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        categoriatxt.setForeground(new java.awt.Color(0, 0, 0));
-        categoriatxt.setText("Categoria");
-        getContentPane().add(categoriatxt);
-        categoriatxt.setBounds(90, 310, 170, 50);
+        Marca_Modelo1.setBounds(30, 290, 140, 20);
 
         Marca_Modelo3.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         Marca_Modelo3.setForeground(new java.awt.Color(0, 0, 0));
-        Marca_Modelo3.setText("Marca");
+        Marca_Modelo3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Marca_Modelo3.setText("MARCA");
         getContentPane().add(Marca_Modelo3);
-        Marca_Modelo3.setBounds(470, 150, 80, 16);
+        Marca_Modelo3.setBounds(440, 150, 90, 16);
 
         Marca_Modelo2.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         Marca_Modelo2.setForeground(new java.awt.Color(0, 0, 0));
-        Marca_Modelo2.setText("Modelo");
+        Marca_Modelo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Marca_Modelo2.setText("MODELO");
         getContentPane().add(Marca_Modelo2);
-        Marca_Modelo2.setBounds(470, 270, 80, 16);
+        Marca_Modelo2.setBounds(440, 290, 110, 16);
 
-        titletxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        descricaotxt.setForeground(new java.awt.Color(0, 0, 0));
+        descricaotxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        descricaotxt.setText("jLabel1");
+        descricaotxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(descricaotxt);
+        descricaotxt.setBounds(40, 190, 300, 70);
+
+        marcatxt.setForeground(new java.awt.Color(0, 0, 0));
+        marcatxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        marcatxt.setText("jLabel1");
+        marcatxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(marcatxt);
+        marcatxt.setBounds(450, 200, 230, 40);
+
+        modelotxt.setForeground(new java.awt.Color(0, 0, 0));
+        modelotxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        modelotxt.setText("jLabel1");
+        modelotxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(modelotxt);
+        modelotxt.setBounds(450, 330, 230, 40);
+
+        categoriatxt.setForeground(new java.awt.Color(0, 0, 0));
+        categoriatxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        categoriatxt.setText("jLabel1");
+        categoriatxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(categoriatxt);
+        categoriatxt.setBounds(40, 330, 230, 40);
+
+        vendedortxt.setForeground(new java.awt.Color(0, 0, 0));
+        vendedortxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        vendedortxt.setText("jLabel1");
+        vendedortxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(vendedortxt);
+        vendedortxt.setBounds(480, 460, 170, 40);
+
         titletxt.setForeground(new java.awt.Color(0, 0, 0));
         titletxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titletxt.setText("Título");
+        titletxt.setText("jLabel1");
+        titletxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(titletxt);
-        titletxt.setBounds(300, 70, 120, 20);
+        titletxt.setBounds(260, 70, 220, 40);
 
-        marcatxt1.setBackground(new java.awt.Color(0, 0, 0));
-        marcatxt1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        marcatxt1.setForeground(new java.awt.Color(0, 0, 0));
-        marcatxt1.setText("Marca");
-        getContentPane().add(marcatxt1);
-        marcatxt1.setBounds(470, 180, 160, 50);
-
-        voltar.setText("Sair");
+        voltar.setText("Voltar");
         voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 voltarActionPerformed(evt);
             }
         });
         getContentPane().add(voltar);
-        voltar.setBounds(610, 470, 80, 30);
+        voltar.setBounds(40, 470, 80, 30);
 
         contato.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        contato.setText("Ver contatos");
+        contato.setText("Ver Perfil");
         contato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contatoActionPerformed(evt);
             }
         });
         getContentPane().add(contato);
-        contato.setBounds(480, 470, 110, 30);
+        contato.setBounds(330, 470, 120, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sustentanet/src/img/Capa de Fundo SustentaNet.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -209,7 +215,7 @@ public class InterfaceItem extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel marcatxt1;
+    private javax.swing.JLabel marcatxt;
     private javax.swing.JLabel modelotxt;
     private javax.swing.JLabel title;
     private javax.swing.JLabel titletxt;

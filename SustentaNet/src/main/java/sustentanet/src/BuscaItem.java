@@ -90,6 +90,7 @@ public final class BuscaItem extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Buscar Item");
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 640));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -142,7 +143,7 @@ public final class BuscaItem extends javax.swing.JFrame {
         go.setBounds(690, 560, 80, 23);
 
         sair.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        sair.setText("Sair");
+        sair.setText("Voltar");
         sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sairActionPerformed(evt);

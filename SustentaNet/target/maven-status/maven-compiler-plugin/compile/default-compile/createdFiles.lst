@@ -1,5 +1,4 @@
 sustentanet\src\BuscaItem$4.class
-sustentanet\src\PerfilUsuario$4.class
 utils\TokenSingleton.class
 sustentanet\src\viewItem.class
 sustentanet\src\Menu$4.class
@@ -44,7 +43,6 @@ src\connection\mysql.class
 sustentanet\src\BuscaItem$5.class
 sustentanet\src\MeusItens$3.class
 sustentanet\src\MeusItens$4.class
-sustentanet\src\PerfilUsuario$3.class
 sustentanet\src\BuscaUsuario$3.class
 sustentanet\src\PerfilUsuario.class
 utils\TableModelCreator.class
