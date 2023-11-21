@@ -88,7 +88,6 @@ public class BuscaUsuario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Buscar usuário");
         setMinimumSize(new java.awt.Dimension(610, 650));
-        setPreferredSize(new java.awt.Dimension(600, 600));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -174,7 +173,7 @@ public class BuscaUsuario extends javax.swing.JFrame {
         getContentPane().add(jSeparator2);
         jSeparator2.setBounds(20, 160, 560, 20);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\SustentaNet(versão final)\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\Capa de Fundo SustentaNet.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sustentanet/src/img/Capa de Fundo SustentaNet.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(-150, -50, 1480, 830);

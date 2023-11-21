@@ -53,7 +53,6 @@ public class CadastroItem extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Item");
         setMinimumSize(new java.awt.Dimension(810, 650));
-        setPreferredSize(new java.awt.Dimension(815, 650));
         setResizable(false);
         setSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
@@ -136,10 +135,10 @@ public class CadastroItem extends javax.swing.JFrame {
         getContentPane().add(jSeparator2);
         jSeparator2.setBounds(20, 270, 760, 20);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\SustentaNet(versão final)\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\Capa de Fundo SustentaNet.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sustentanet/src/img/Capa de Fundo SustentaNet.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(-30, 0, 910, 1080);
+        jLabel2.setBounds(-30, 0, 910, 630);
 
         pack();
         setLocationRelativeTo(null);

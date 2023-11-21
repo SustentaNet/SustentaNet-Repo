@@ -94,7 +94,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel2.add(senhaInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 380, -1));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 380, 10));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\SustentaNet(versão final)\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\Logo SustentaNet.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sustentanet/src/img/Logo SustentaNet.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, -30, 490, 360));
 

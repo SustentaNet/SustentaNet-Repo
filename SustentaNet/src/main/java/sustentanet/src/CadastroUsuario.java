@@ -206,10 +206,10 @@ public class CadastroUsuario extends javax.swing.JFrame {
         getContentPane().add(texto2);
         texto2.setBounds(290, 40, 220, 20);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\SustentaNet(versão final)\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\Capa de Fundo SustentaNet.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sustentanet/src/img/Capa de Fundo SustentaNet.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(-10, -10, 840, 1080);
+        jLabel2.setBounds(-10, -10, 840, 650);
 
         pack();
         setLocationRelativeTo(null);

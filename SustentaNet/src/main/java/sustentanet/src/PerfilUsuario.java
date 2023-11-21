@@ -63,9 +63,7 @@ public class PerfilUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Perfil do usuário");
-        setMaximumSize(new java.awt.Dimension(600, 479));
         setMinimumSize(new java.awt.Dimension(600, 479));
-        setPreferredSize(new java.awt.Dimension(600, 515));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -182,7 +180,7 @@ public class PerfilUsuario extends javax.swing.JFrame {
         getContentPane().add(jLabel8);
         jLabel8.setBounds(480, 320, 80, 23);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\duduh\\OneDrive\\Documentos\\SustentaNet(versão final)\\SustentaNet\\src\\main\\java\\sustentanet\\src\\img\\Capa de Fundo SustentaNet.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sustentanet/src/img/Capa de Fundo SustentaNet.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(-20, -20, 690, 650);
